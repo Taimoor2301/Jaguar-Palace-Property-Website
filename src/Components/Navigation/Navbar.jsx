@@ -16,7 +16,6 @@ const Navbar = () => {
 				<div>
 					<img src={logo} className='w-52' alt='' />
 				</div>
-
 				<div className='text-xl lg:flex hidden gap-0 navlinks'>
 					<NavLink to={"/"} className='grid place-content-center  py-2 px-3'>
 						Home
@@ -30,40 +29,44 @@ const Navbar = () => {
 					<NavLink to={"/property"} className='grid place-content-center py-2 px-3'>
 						Property
 					</NavLink>
+					<NavLink to={"/profile"} className='grid place-content-center py-2 px-3'>
+						Profile
+					</NavLink>
 				</div>
-
 				<div className='lg:flex hidden items-center gap-1'>
 					<input
 						type='search'
 						placeholder='search'
-						className='border border-black rounded-full px-3.5 py-2 focus:outline-none focus:border-primary hover:border-primary transition-all'
+						className='border border-black rounded-lg px-3.5 py-2 focus:outline-none focus:border-primary hover:border-primary transition-all'
 					/>
 					<FaSearch className='text-[25px] hover:text-primary transition-all' />
 				</div>
-
 				<div className='text-2xl text-gray-800 lg:hidden' onClick={() => setNavOpen(!navOpen)}>
 					{navOpen ? <IoMdClose /> : <FaBars />}
 				</div>
 			</nav>
-
-			<div className={`lg:hidden transition-all duration-300 overflow-hidden ${!navOpen ? "h-0" : "h-[350px]"}`}>
+			<div className={`lg:hidden transition-all duration-300 overflow-hidden ${!navOpen ? "h-0" : "h-[370px] border-b-2"}`}>
 				<div className='text-x flex flex-col py-3 gap-5 font-righteous navlinks'>
-					<NavLink to={"/"} className='grid place-content-center  py-2 px-3'>
+					<NavLink to={"/"} onClick={() => setNavOpen(false)} className='grid place-content-center  py-2 px-3'>
 						Home
 					</NavLink>
-					<NavLink to={"/about"} className='grid place-content-center py-2 px-3'>
+					<NavLink to={"/about"} onClick={() => setNavOpen(false)} className='grid place-content-center py-2 px-3'>
 						About
 					</NavLink>
-					<NavLink to={"/contact"} className='grid place-content-center py-2 px-3'>
+					<NavLink to={"/contact"} onClick={() => setNavOpen(false)} className='grid place-content-center py-2 px-3'>
 						Contact
 					</NavLink>
-					<NavLink to={"/property"} className='grid place-content-center py-2 px-3'>
+					<NavLink to={"/property"} onClick={() => setNavOpen(false)} className='grid place-content-center py-2 px-3'>
 						Property
+					</NavLink>
+					<NavLink to={"/profile"} onClick={() => setNavOpen(false)} className='grid place-content-center py-2 px-3'>
+						Profile
 					</NavLink>
 
 					<div className='flex justify-center items-center gap-1'>
 						<input
 							type='search'
+							placeholder='search...'
 							className='border border-black rounded-full px-3.5 py-2 focus:outline-none focus:border-primary hover:border-primary transition-all'
 						/>
 						<FaSearch className='text-[25px] hover:text-primary transition-all' />

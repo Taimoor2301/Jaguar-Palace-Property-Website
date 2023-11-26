@@ -27,7 +27,7 @@ const images = [image1, image2, image3];
 const Slide = ({ img }) => {
 	return (
 		<swiper-slide>
-			<div className='w-full max-h-[80vh] relative'>
+			<div className='max-h-[80vh] relative'>
 				<img src={img} className='object-cover object-center' alt='image' />
 				<div className='absolute inset-0 bg-black/40  flex justify-center items-center'>
 					<div className='flex flex-col md:gap-3 gap-1 items-center fadein'>
