@@ -25,7 +25,7 @@ const WhatAreYouLooking = () => {
 				</div>
 			</div>
 
-			<div className='bg-black/80'>
+			<div className='bg-primary'>
 				<main className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 py-20 px-5 xl:px-0'>
 					<AchivementElm title='Projects Done' number={1060} />
 					<AchivementElm title='Satisfied Clients' number={920} />
@@ -76,10 +76,10 @@ const Item = ({ name, detail, Icon, link }) => {
 
 const AchivementElm = ({ title, number }) => (
 	<div className='flex flex-col text-white font-righteous items-center justify-center gap-5'>
-		<span className='text-4xl'>{number}</span>
+		<span className='text-6xl'>{number}</span>
 
-		<div className='bg-primary rounded-full h-[5px] w-10'></div>
+		<div className='bg-gray-800 rounded-full h-[5px] w-10'></div>
 
-		<span className='tracking-wide text-lg'>{title}</span>
+		<span className='tracking-wide text-lg text-gray-800'>{title}</span>
 	</div>
 );

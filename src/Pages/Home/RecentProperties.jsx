@@ -14,7 +14,10 @@ const RecentProperties = () => {
 
 			<div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				{recentProperty.map((p, i) => (
-					<RecentElement key={i} {...p} />
+					<RecentElement
+						key={i}
+						{...p}
+					/>
 				))}
 			</div>
 		</div>
@@ -25,13 +28,21 @@ export default RecentProperties;
 
 const RecentElement = ({ image, landArea, bedrooms, bathrooms, location, heading, price, link }) => {
 	return (
-		<div className='bg-white font-righteous'>
-			<Link to={link} className='h-[250px] flex justify-center items-center'>
-				<img src={image} className='h-full w-full object-cover' alt='' />
+		<div className='bg-white font-righteous transition-all duration-300 rounded-xl overflow-hidden hover:shadow-[0_0_10px] hover:shadow-primary/70'>
+			<Link
+				to={link}
+				className='h-[250px] flex justify-center items-center'>
+				<img
+					src={image}
+					className='h-full w-full object-cover'
+					alt=''
+				/>
 			</Link>
 
 			<div className='flex flex-col gap-3 py-4 px-3'>
-				<Link to={link} className='font-bold tracking-wider hover:text-primary'>
+				<Link
+					to={link}
+					className='font-bold tracking-wider hover:text-primary'>
 					{heading}
 				</Link>
 
@@ -57,7 +68,9 @@ const RecentElement = ({ image, landArea, bedrooms, bathrooms, location, heading
 
 				<div className='flex items-center'>
 					<span className='text-gray-500 text-sm'>2 years ago</span>
-					<Link className='hover:bg-primary bg-gray-800 transition-all duration-300 text-white  font-medium py-1.5 px-3 ml-10' to={link}>
+					<Link
+						className='hover:bg-primary bg-gray-800 transition-all duration-300 text-white  font-medium py-1.5 px-3 ml-10'
+						to={link}>
 						Details
 					</Link>
 				</div>

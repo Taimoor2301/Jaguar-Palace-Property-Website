@@ -11,9 +11,16 @@ register();
 const Mainslider = () => {
 	return (
 		<div className='relative max-w-[1530px] mx-auto'>
-			<swiper-container slides-per-view='1' speed='500' loop='true' autoPlay='true'>
+			<swiper-container
+				slides-per-view='1'
+				speed='500'
+				loop='true'
+				autoPlay='true'>
 				{images.map((i) => (
-					<Slide key={i} img={i} />
+					<Slide
+						key={i}
+						img={i}
+					/>
 				))}
 			</swiper-container>
 		</div>
@@ -28,12 +35,16 @@ const Slide = ({ img }) => {
 	return (
 		<swiper-slide>
 			<div className='max-h-[80vh] relative'>
-				<img src={img} className='object-cover object-center' alt='image' />
+				<img
+					src={img}
+					className='object-cover object-center'
+					alt='image'
+				/>
 				<div className='absolute inset-0 bg-black/40  flex justify-center items-center'>
 					<div className='flex flex-col md:gap-3 gap-1 items-center fadein'>
-						<h2 className='md:text-xl text-sm font-righteous font-thin tracking-wide text-white'>Get Start With Your Next Awesome Project</h2>
+						<h2 className='md:text-xl text-sm font-righteous font-thin tracking-wide text-white'>Real Estate Excellence</h2>
 						<h1 className='text-2xl md:text-7xl font-bold text-white tracking-wide font-righteous'>
-							We are <span className='text-primary'>creative</span>
+							We are <span className='text-primary'>awesome!</span>
 						</h1>
 						<Link
 							to={"/features"}
