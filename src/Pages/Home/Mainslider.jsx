@@ -44,7 +44,7 @@ const Slide = ({ img }) => {
 					<div className='flex flex-col md:gap-3 gap-1 items-center fadein'>
 						<h2 className='md:text-xl text-sm font-righteous font-thin tracking-wide text-white'>Real Estate Excellence</h2>
 						<h1 className='text-2xl md:text-7xl font-bold text-white tracking-wide font-righteous'>
-							We are <span className='text-primary'>awesome!</span>
+							We are <span className='text-primary'>awesome</span>
 						</h1>
 						<Link
 							to={"/features"}
