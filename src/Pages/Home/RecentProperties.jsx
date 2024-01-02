@@ -32,7 +32,7 @@ const RecentElement = ({ image, landArea, bedrooms, bathrooms, location, heading
 	return (
 		<div className='bg-white font-righteous transition-all duration-300 rounded-xl overflow-hidden hover:shadow-[0_0_10px] hover:shadow-primary/70'>
 			<Link
-				to={`file/${id}`}
+				to={`/file/${id}`}
 				className='h-[250px] flex justify-center items-center'>
 				<img
 					src={image}
@@ -43,7 +43,7 @@ const RecentElement = ({ image, landArea, bedrooms, bathrooms, location, heading
 
 			<div className='flex flex-col gap-3 py-4 px-3'>
 				<Link
-					to={`file/${id}`}
+					to={`/file/${id}`}
 					className='font-bold tracking-wider hover:text-primary'>
 					{heading}
 				</Link>
@@ -72,7 +72,7 @@ const RecentElement = ({ image, landArea, bedrooms, bathrooms, location, heading
 					<span className='text-gray-500 text-sm'>2 years ago</span>
 					<Link
 						className='hover:bg-primary bg-gray-800 transition-all duration-300 text-white  font-medium py-1.5 px-3 ml-10'
-						to={`file/${id}`}>
+						to={`/file/${id}`}>
 						Details
 					</Link>
 				</div>
