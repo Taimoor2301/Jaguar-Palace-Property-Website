@@ -1,13 +1,10 @@
 import { useState } from "react";
 import TabButton from "../buttons/TabButton";
 import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa";
 
 const PaymentModel = ({ closeModel }) => {
-	const handleClick = (e) => {
-		e.stopPropagation();
-	};
-
-	const [activeTab, setActiveTab] = useState("crypto");
+	const [activeTab, setActiveTab] = useState("Card");
 	const changeTab = (name) => {
 		setActiveTab(name);
 	};
@@ -19,15 +16,26 @@ const PaymentModel = ({ closeModel }) => {
 			<motion.div
 				initial={{ opacity: 0, scale: 0 }}
 				animate={{ opacity: 1, scale: 1 }}
+				transition={{ duration: 0.3 }}
 				exit={{ opacity: 0, scale: 0 }}
-				className='bg-white max-w-7xl mx-auto lg:w-[80vw] w-[95vw] h-[90vh] lg:h-[90vh] rounded-xl p-3 shadow-md flex flex-col items-center gap-10'
-				onClick={(e) => handleClick(e)}>
-				<div className='border border-gray-800 rounded-full overflow-hidden justify-self-center'>
-					<TabButton name='crypto' active={activeTab} onclick={changeTab} />
-					<TabButton name='peer' active={activeTab} onclick={changeTab} />
+				className='bg-white md:max-w-xl mx-auto w-[90vw]  h-[90vh] rounded-xl p-3 shadow-md flex flex-col items-center gap-10'
+				onClick={(e) => e.stopPropagation()}>
+				<div className='flex justify-center'>
+					<div className='border border-gray-800 rounded-full overflow-hidden justify-self-center'>
+						<TabButton
+							name='Crypto'
+							active={activeTab}
+							onclick={changeTab}
+						/>
+						<TabButton
+							name='Card'
+							active={activeTab}
+							onclick={changeTab}
+						/>
+					</div>
 				</div>
 
-				<div className='flex-1 w-full'>{activeTab !== "crypto" ? <PeerPayment /> : <CryptoPayment />}</div>
+				<div className='flex-1 w-full'>{activeTab !== "Crypto" ? <FiatPayment /> : <CryptoPayment />}</div>
 			</motion.div>
 		</motion.div>
 	);
@@ -37,33 +45,62 @@ export default PaymentModel;
 
 const CryptoPayment = () => {
 	return (
-		<div className='flex gap-1 flex-col lg:flex-row h-full'>
-			<div className='rounded-xl overflow-hidden max-h-[20rem] lg:max-h-[100%] flex-1'>
-				<img src={img1} alt='' className='w-full h-full object-center object-cover' />
-			</div>
-
+		<div className=''>
 			<div className='col-span-1 border rounded-xl px-3 py-5 flex-1'>
 				<h1 className='text-xl font-righteous text-center'>Payment via Crypto</h1>
 			</div>
 		</div>
 	);
 };
-const PeerPayment = () => {
+const FiatPayment = () => {
 	return (
-		<div className='flex gap-1 flex-col lg:flex-row h-full'>
-			<div className='rounded-xl overflow-hidden max-h-[20rem] lg:max-h-[100%] flex-1'>
-				<img src={img2} alt='' className='w-full h-full object-center object-cover' />
+		<div className='flex flex-col gap-2'>
+			<h1 className='col-span-full text-md font-poppins font-medium md:pt-4 pb-4 md:pb-10 text-xl text-center font-righteous '>Payment via Crad</h1>
+
+			<div className='flex flex-col col-span-full text-sm pb-5'>
+				<span className='flex gap-2 items-center font-medium'>
+					<FaArrowRight className='text-lg text-purple-500' /> Credit or Debit Card
+				</span>
 			</div>
 
-			<div className='border rounded-xl px-3 py-5 flex-1'>
-				<h1 className='text-xl font-righteous text-center'>Payment via Peer</h1>
+			<div className='flex flex-col gap-0.5 col-span-full md:col-span-1'>
+				<input
+					type='text'
+					className='border p-2 rounded-lg focus:outline-purple-500'
+					placeholder='full name'
+				/>
+				<label className='text-sm font-poppins text-gray-600 font-medium'>Full Name</label>
+			</div>
+			<div className='flex flex-col gap-0.5 col-span-full md:col-span-1'>
+				<input
+					type='number'
+					className='border p-2 rounded-lg focus:outline-purple-500'
+					placeholder='card number'
+				/>
+				<label className='text-sm font-poppins text-gray-600 font-medium'>Card Number</label>
+			</div>
+			<div className='flex flex-col gap-0.5 col-span-full md:col-span-1'>
+				<input
+					type='text'
+					className='border p-2 rounded-lg focus:outline-purple-500'
+					placeholder='CVC'
+				/>
+				<label className='text-sm font-poppins text-gray-600 font-medium'>CVC</label>
+			</div>
+			<div className='flex flex-col gap-0.5 col-span-full md:col-span-1'>
+				<input
+					type='text'
+					className='border p-2 rounded-lg focus:outline-purple-500'
+					placeholder='MM/YY'
+				/>
+				<label className='text-sm font-poppins text-gray-600 font-medium'>Card Expiration</label>
+			</div>
+
+			<div className='w-full flex justify-center'>
+				<button className='flex gap-2 items-center group text-gray-700 hover:text-white font-poppins font-medium bg-primary rounded-lg px-4 py-2'>
+					Continue <FaArrowRight className='group-hover:translate-x-2 transition-all duration-300 -rotate-90 group-hover:rotate-0' />
+				</button>
 			</div>
 		</div>
 	);
 };
-
-const img1 =
-	"https://img.freepik.com/free-vector/flat-design-cryptocurrency-concept_23-2149166905.jpg?size=626&ext=jpg&ga=GA1.1.2038201854.1686040080&semt=ais";
-
-const img2 =
-	"https://img.freepik.com/free-vector/gradient-installment-illustration_23-2149397487.jpg?size=600&ext=jpg&ga=GA1.1.2038201854.1686040080&semt=ais";

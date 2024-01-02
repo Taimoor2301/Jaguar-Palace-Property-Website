@@ -55,7 +55,9 @@ export const options = [
 
 export const recentProperty = [
 	{
-		heading: "Popular apartment in the city delhi",
+		id: 1,
+		type: "Commercial",
+		heading: "Popular apartment in the Multan",
 		location: "122N Morgan St, Chicago , IL 60607 , USA",
 		price: "1,300.00",
 		bedrooms: 3,
@@ -65,37 +67,45 @@ export const recentProperty = [
 			"https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb3BlcnR5fGVufDB8fDB8fHww",
 	},
 	{
-		heading: "Popular apartment in the city delhi",
+		id: 2,
+		heading: "Popular apartment in the Islamabad",
 		location: "122N Morgan St, Chicago , IL 60607 , USA",
 		price: "1,300.00",
 		bedrooms: 3,
+		type: "Commercial",
 		bathrooms: 2,
 		landArea: 110,
 		image:
 			"https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHByb3BlcnR5fGVufDB8fDB8fHww",
 	},
 	{
-		heading: "Popular apartment in the city delhi",
+		id: 3,
+		heading: "Palaza in Rawalpindi Pakistan",
 		location: "122N Morgan St, Chicago , IL 60607 , USA",
 		price: "1,300.00",
 		bedrooms: 3,
+		type: "Commercial",
 		bathrooms: 2,
 		landArea: 110,
 		image:
 			"https://images.unsplash.com/photo-1448630360428-65456885c650?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvcGVydHl8ZW58MHx8MHx8fDA%3D",
 	},
 	{
-		heading: "Popular apartment in the city delhi",
+		id: 4,
+		heading: "Popular apartment in the Karachi",
 		location: "122N Morgan St, Chicago , IL 60607 , USA",
 		price: "1,300.00",
 		bedrooms: 3,
+		type: "Recidential",
 		bathrooms: 2,
 		landArea: 110,
 		image:
 			"https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHByb3BlcnR5fGVufDB8fDB8fHww",
 	},
 	{
-		heading: "Popular apartment in the city delhi",
+		id: 5,
+		type: "Recidential",
+		heading: "Popular Recidential Building in the city Bahawalpur",
 		location: "122N Morgan St, Chicago , IL 60607 , USA",
 		price: "1,300.00",
 		bedrooms: 3,
@@ -105,6 +115,8 @@ export const recentProperty = [
 			"https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHByb3BlcnR5fGVufDB8fDB8fHww",
 	},
 	{
+		id: 6,
+		type: "Recidential",
 		heading: "Popular apartment in the city delhi",
 		location: "122N Morgan St, Chicago , IL 60607 , USA",
 		price: "1,300.00",
@@ -146,6 +158,7 @@ export const news = [
 		date: "April 25 , 2017",
 		detail:
 			"Ac aliquam erat. Rhoncus ad senectus magnais metus fermentum nullam facilisi fames malesu ada potenti. Magna ac amet placerat vivamus litora.",
+		id: 1,
 	},
 	{
 		img: "https://plus.unsplash.com/premium_photo-1684348962314-64fa628992f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHByb3BlcnR5fGVufDB8fDB8fHww",
@@ -153,8 +166,10 @@ export const news = [
 		date: "April 25 , 2017",
 		detail:
 			"Ac aliquam erat. Rhoncus ad senectus magnais metus fermentum nullam facilisi fames malesu ada potenti. Magna ac amet placerat vivamus litora.",
+		id: 2,
 	},
 	{
+		id: 3,
 		img: "https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHByb3BlcnR5fGVufDB8fDB8fHww",
 		postedBy: "Arcu Eget",
 		date: "April 25 , 2017",

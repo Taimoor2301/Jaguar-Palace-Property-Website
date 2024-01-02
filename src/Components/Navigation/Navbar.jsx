@@ -14,22 +14,38 @@ const Navbar = () => {
 			<SubNav />
 			<nav className='px-5 xl:px-0 max-w-7xl flex justify-between items-center gap-3 py-1.5 mx-auto font-righteous'>
 				<div>
-					<img src={logo} className='w-52' alt='' />
+					<Link to='/'>
+						<img
+							src={logo}
+							className='w-52'
+							alt=''
+						/>
+					</Link>
 				</div>
 				<div className='text-xl lg:flex hidden gap-0 navlinks'>
-					<NavLink to={"/"} className='grid place-content-center  py-2 px-3'>
+					<NavLink
+						to={"/"}
+						className='grid place-content-center  py-2 px-3'>
 						Home
 					</NavLink>
-					<NavLink to={"/about"} className='grid place-content-center py-2 px-3'>
+					<NavLink
+						to={"/about"}
+						className='grid place-content-center py-2 px-3'>
 						About
 					</NavLink>
-					<NavLink to={"/contact"} className='grid place-content-center py-2 px-3'>
+					<NavLink
+						to={"/contact"}
+						className='grid place-content-center py-2 px-3'>
 						Contact
 					</NavLink>
-					<NavLink to={"/property"} className='grid place-content-center py-2 px-3'>
+					<NavLink
+						to={"/property"}
+						className='grid place-content-center py-2 px-3'>
 						Property
 					</NavLink>
-					<NavLink to={"/profile"} className='grid place-content-center py-2 px-3'>
+					<NavLink
+						to={"/profile"}
+						className='grid place-content-center py-2 px-3'>
 						Profile
 					</NavLink>
 				</div>
@@ -41,25 +57,42 @@ const Navbar = () => {
 					/>
 					<FaSearch className='text-[25px] hover:text-primary transition-all' />
 				</div>
-				<div className='text-2xl text-gray-800 lg:hidden' onClick={() => setNavOpen(!navOpen)}>
+				<div
+					className='text-2xl text-gray-800 lg:hidden'
+					onClick={() => setNavOpen(!navOpen)}>
 					{navOpen ? <IoMdClose /> : <FaBars />}
 				</div>
 			</nav>
 			<div className={`lg:hidden transition-all duration-300 overflow-hidden ${!navOpen ? "h-0" : "h-[370px] border-b-2"}`}>
 				<div className='text-x flex flex-col py-3 gap-5 font-righteous navlinks'>
-					<NavLink to={"/"} onClick={() => setNavOpen(false)} className='grid place-content-center  py-2 px-3'>
+					<NavLink
+						to={"/"}
+						onClick={() => setNavOpen(false)}
+						className='grid place-content-center  py-2 px-3'>
 						Home
 					</NavLink>
-					<NavLink to={"/about"} onClick={() => setNavOpen(false)} className='grid place-content-center py-2 px-3'>
+					<NavLink
+						to={"/about"}
+						onClick={() => setNavOpen(false)}
+						className='grid place-content-center py-2 px-3'>
 						About
 					</NavLink>
-					<NavLink to={"/contact"} onClick={() => setNavOpen(false)} className='grid place-content-center py-2 px-3'>
+					<NavLink
+						to={"/contact"}
+						onClick={() => setNavOpen(false)}
+						className='grid place-content-center py-2 px-3'>
 						Contact
 					</NavLink>
-					<NavLink to={"/property"} onClick={() => setNavOpen(false)} className='grid place-content-center py-2 px-3'>
+					<NavLink
+						to={"/property"}
+						onClick={() => setNavOpen(false)}
+						className='grid place-content-center py-2 px-3'>
 						Property
 					</NavLink>
-					<NavLink to={"/profile"} onClick={() => setNavOpen(false)} className='grid place-content-center py-2 px-3'>
+					<NavLink
+						to={"/profile"}
+						onClick={() => setNavOpen(false)}
+						className='grid place-content-center py-2 px-3'>
 						Profile
 					</NavLink>
 
@@ -88,7 +121,9 @@ const SubNav = () => {
 					Need Support ? +411-555-555-5
 				</span>
 				<span>
-					<Link to={"/login"} className='flex items-center text-xs md:text-md gap-2'>
+					<Link
+						to={"/login"}
+						className='flex items-center text-xs md:text-md gap-2'>
 						<IoPerson />
 						Login/Registration
 					</Link>

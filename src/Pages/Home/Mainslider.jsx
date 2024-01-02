@@ -1,9 +1,5 @@
 import { register } from "swiper/element/bundle";
 
-import image1 from "../../assets/images/mainimg1.jpg";
-import image2 from "../../assets/images/mainimg2.jpg";
-import image3 from "../../assets/images/mainimg3.jpg";
-import { Link } from "react-router-dom";
 import "./slider.css";
 
 register();
@@ -29,7 +25,11 @@ const Mainslider = () => {
 
 export default Mainslider;
 
-const images = [image1, image2, image3];
+const images = [
+	"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	"https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+];
 
 const Slide = ({ img }) => {
 	return (
@@ -44,13 +44,13 @@ const Slide = ({ img }) => {
 					<div className='flex flex-col md:gap-3 gap-1 items-center fadein'>
 						<h2 className='md:text-xl text-sm font-righteous font-thin tracking-wide text-white'>Real Estate Excellence</h2>
 						<h1 className='text-2xl md:text-7xl font-bold text-white tracking-wide font-righteous'>
-							We are <span className='text-primary'>awesome</span>
+							Jaguar <span className='text-primary'>palace</span>
 						</h1>
-						<Link
-							to={"/features"}
+						<a
+							href='#recentProperties'
 							className='flex justify-center items-center text-sm md:text-2xl text-white bg-primary hover:scale-105 opacity-90 hover:opacity-100 transition-all duration-150 font-medium md:py-2.5 py-1 md:px-10 px-3'>
-							See all features
-						</Link>
+							Properties
+						</a>
 					</div>
 				</div>
 			</div>

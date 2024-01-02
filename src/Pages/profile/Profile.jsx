@@ -4,6 +4,7 @@ import ListingTab from "./Tabs/ListingTab";
 import HistoryTab from "./Tabs/HistoryTab";
 import WalletTab from "./Tabs/WalletTab";
 import TabButton from "../../Components/buttons/TabButton";
+import { FaPencil } from "react-icons/fa6";
 
 const Profile = () => {
 	const [activeTab, setActiveTab] = useState("Profile");
@@ -28,24 +29,39 @@ const Profile = () => {
 				<div className='h-[20rem] p-2 relative'>
 					<img
 						className='w-full h-full object-cover rounded-2xl'
-						src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlfGVufDB8fDB8fHww'
+						src='https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHByb3BlcnR5fGVufDB8fDB8fHww'
 					/>
 
 					<div className='aspect-square rounded-full h-[8rem] lg:h-[15rem] absolute lg:top-[50%] bottom-[-4rem] lg:left-[75%] left-[50%] translate-x-[-50%] lg:translate-x-0 border-white border-4 shadow-md overflow-hidden group transition-all duration-500'>
-						<img className='w-full h-full object-cover object-center' src={profileImageUrl} alt='' />
+						<img
+							className='w-full h-full object-cover object-center'
+							src={profileImageUrl}
+							alt=''
+						/>
 						<label
 							htmlFor='profilePic'
-							className='absolute inset-0 z-[1000] bg-black/30 backdrop-blur-sm invisible group-hover:visible flex justify-center items-center text-white font-righteous text-lg'>
+							className='absolute gap-2 inset-0 z-[1000] bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex justify-center items-center text-white font-righteous text-lg'>
+							<FaPencil />
 							Update Pictue
 						</label>
-						<input type='file' className='absolute hidden' id='profilePic' onChange={(e) => setProfileImage(e.target.files[0])} />
+						<input
+							type='file'
+							className='absolute hidden'
+							id='profilePic'
+							onChange={(e) => setProfileImage(e.target.files[0])}
+						/>
 					</div>
 				</div>
 
 				<div className='bg-white shadow rounded-xl p-2 mt-20 border'>
 					<div className='flex justify-center'>
 						{buttons.map((button, i) => (
-							<TabButton key={i} {...button} active={activeTab} onclick={changeTab} />
+							<TabButton
+								key={i}
+								{...button}
+								active={activeTab}
+								onclick={changeTab}
+							/>
 						))}
 					</div>
 
